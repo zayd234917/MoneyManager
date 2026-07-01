@@ -1,0 +1,6 @@
+FROM node:lts-slim
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN ng build && ng serve
